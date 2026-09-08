@@ -334,3 +334,23 @@ Developed as an IoT + AI solution for intelligent underground mine monitoring an
 This project is intended for educational, research, and prototype development purposes.
 
 am asking like this which is easy to copy for me to directly paste entire content in github
+
+## Project Prototype
+
+The AI Mine Guardian prototype is a mobile underground mine monitoring system designed to collect environmental data and provide real-time visual monitoring.
+
+### Team
+
+![AI Mine Guardian Team](images/Team.jpeg)
+
+### Prototype
+
+![AI Mine Guardian Prototype](images/proto_1.jpeg)
+
+### Prototype Hardware
+
+![AI Mine Guardian Hardware](images/proto_2.jpeg)
+
+### Prototype Details
+
+![AI Mine Guardian Prototype Details](images/proto_3.jpeg)
