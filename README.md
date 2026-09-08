@@ -2,59 +2,96 @@
 
 ## AI-Powered Underground Mine Safety, Monitoring and Rescue System
 
-AI Mine Guardian is an intelligent mine-safety system designed to monitor underground mining environments using **IoT sensors, computer vision, AI-based risk analysis, and real-time dashboards**.
+AI Mine Guardian is an intelligent underground mine safety and monitoring system that combines **IoT sensors, embedded systems, computer vision, artificial intelligence, risk analysis, cloud connectivity, and a web-based dashboard**.
 
-The system combines environmental sensor data with visual information to identify hazardous conditions and provide a centralized view of mine safety.
+The system is designed to continuously monitor environmental conditions and visual information inside underground mining environments. Sensor and camera data are processed to identify potentially unsafe conditions and classify the overall mine status as **SAFE, WARNING, or DANGER**.
 
 ---
 
-## 🚨 Problem
+## 🚨 Problem Statement
 
-Underground mines can expose workers to hazards such as:
+Underground mining environments can expose workers and equipment to several potentially dangerous conditions, including:
 
-* Toxic and combustible gases
-* Unsafe temperature and humidity conditions
-* Structural or environmental hazards
-* Poor visibility
-* Delayed detection of dangerous conditions
+- Toxic and combustible gases
+- Carbon monoxide accumulation
+- Unsafe temperature and humidity
+- Poor environmental conditions
+- Obstacles and possible structural hazards
+- Limited visibility
+- Delayed detection of hazardous situations
+- Difficulty in continuously monitoring underground areas
 
-Traditional monitoring systems may depend heavily on individual sensors and may not provide a complete picture of the environment.
+Conventional monitoring approaches may rely mainly on individual sensors. However, a single sensor cannot provide a complete understanding of the mine environment.
+
+AI Mine Guardian addresses this limitation by combining **multiple environmental sensors with computer vision and AI-based risk analysis**.
 
 ---
 
 ## 💡 Proposed Solution
 
-AI Mine Guardian combines multiple sources of information into a unified monitoring system.
+AI Mine Guardian provides a unified monitoring system that combines:
 
-### System Overview
+- IoT-based environmental sensing
+- ESP32-based embedded processing
+- ESP32-CAM visual monitoring
+- YOLO-based object detection
+- OpenCV image processing
+- Multimodal risk analysis
+- Firebase data synchronization
+- Web-based monitoring dashboard
+- Sensor-data simulation for software testing
+
+The system combines environmental and visual information to produce an overall safety assessment.
+
+---
+
+## 🏗️ System Overview
 
 ```text
-        ┌──────────────────────┐
-        │   Mine Environment   │
-        └──────────┬───────────┘
-                   │
-          ┌────────┴─────────┐
-          │                  │
-     IoT Sensors          Camera
-          │                  │
-          │             YOLO / OpenCV
-          │                  │
-          └────────┬─────────┘
-                   │
-             Risk Analysis
-                   │
-          ┌────────┴─────────┐
-          │                  │
-     Sensor Risk        Vision Risk
-          │                  │
-          └────────┬─────────┘
-                   │
-            Combined Risk
-              Analysis
-                   │
-                   ▼
-          ┌─────────────────┐
-          │   Dashboard     │
-          │ Monitoring &    │
-          │ Alerts          │
-          └─────────────────┘
+                    ┌────────────────────────┐
+                    │   UNDERGROUND MINE     │
+                    │      ENVIRONMENT       │
+                    └───────────┬────────────┘
+                                │
+                ┌───────────────┴───────────────┐
+                │                               │
+                ▼                               ▼
+       ┌─────────────────┐             ┌─────────────────┐
+       │  IoT Sensors    │             │     Camera      │
+       │                 │             │   ESP32-CAM     │
+       ├─────────────────┤             │     OV2640      │
+       │ MQ-4            │             └────────┬────────┘
+       │ MQ-7            │                      │
+       │ BME280          │                      ▼
+       │ HC-SR04         │               YOLO / OpenCV
+       └────────┬────────┘                      │
+                │                               │
+                ▼                               ▼
+       ┌─────────────────┐             ┌─────────────────┐
+       │ Sensor Analysis │             │ Vision Analysis │
+       └────────┬────────┘             └────────┬────────┘
+                │                               │
+                └───────────────┬───────────────┘
+                                │
+                                ▼
+                    ┌────────────────────────┐
+                    │  MULTIMODAL RISK       │
+                    │       ENGINE            │
+                    └───────────┬────────────┘
+                                │
+                                ▼
+                    ┌────────────────────────┐
+                    │ SAFE / WARNING / DANGER │
+                    └───────────┬────────────┘
+                                │
+                                ▼
+                    ┌────────────────────────┐
+                    │       FIREBASE         │
+                    │        DATABASE        │
+                    └───────────┬────────────┘
+                                │
+                                ▼
+                    ┌────────────────────────┐
+                    │   WEB DASHBOARD        │
+                    │ Monitoring & Alerts    │
+                    └────────────────────────┘
