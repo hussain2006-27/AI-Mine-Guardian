@@ -1,0 +1,1860 @@
+/* =========================================================
+   AI MINE GUARDIAN
+   FUTURISTIC INDUSTRIAL CONTROL ROOM
+========================================================= */
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    background:
+
+        radial-gradient(
+            circle at 50% -20%,
+            #172554 0%,
+            #0b1120 45%,
+            #050914 100%
+        );
+
+    color: #dbeafe;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    letter-spacing: 0.3px;
+}
+
+
+/* =========================================================
+   TOP HEADER
+========================================================= */
+
+.topbar {
+
+    min-height: 82px;
+
+    padding: 18px 35px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    border-bottom:
+        1px solid rgba(
+            56,
+            189,
+            248,
+            0.35
+        );
+
+    background:
+        rgba(
+            5,
+            15,
+            30,
+            0.92
+        );
+
+    box-shadow:
+        0 0 30px
+        rgba(
+            14,
+            165,
+            233,
+            0.08
+        );
+}
+
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.brand-icon {
+
+    width: 48px;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 27px;
+
+    border:
+        1px solid #38bdf8;
+
+    background:
+        rgba(
+            14,
+            165,
+            233,
+            0.08
+        );
+
+    box-shadow:
+        0 0 15px
+        rgba(
+            14,
+            165,
+            233,
+            0.2
+        );
+}
+
+
+.brand h1 {
+
+    margin: 0;
+
+    font-size: 23px;
+
+    letter-spacing: 2px;
+
+    color: #f8fafc;
+}
+
+
+.brand p {
+
+    margin: 4px 0 0;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    color: #64748b;
+}
+
+
+.system-status {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    text-align: right;
+}
+
+
+.system-status strong {
+
+    display: block;
+
+    font-size: 11px;
+
+    letter-spacing: 1.5px;
+
+    color: #86efac;
+}
+
+
+.system-status small {
+
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 9px;
+
+    color: #64748b;
+
+    letter-spacing: 1px;
+}
+
+
+.online-dot {
+
+    width: 9px;
+
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: #22c55e;
+
+    box-shadow:
+        0 0 8px #22c55e,
+        0 0 18px
+        rgba(
+            34,
+            197,
+            94,
+            0.5
+        );
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+main {
+
+    width:
+        min(
+            1450px,
+            94%
+        );
+
+    margin:
+        25px auto 50px;
+}
+
+
+/* =========================================================
+   PANELS
+========================================================= */
+
+.panel {
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(
+                15,
+                30,
+                52,
+                0.96
+            ),
+            rgba(
+                7,
+                17,
+                31,
+                0.96
+            )
+        );
+
+    border:
+        1px solid
+        rgba(
+            56,
+            189,
+            248,
+            0.22
+        );
+
+    box-shadow:
+
+        inset 0 1px
+        rgba(
+            255,
+            255,
+            255,
+            0.03
+        ),
+
+        0 8px 30px
+        rgba(
+            0,
+            0,
+            0,
+            0.25
+        );
+}
+
+
+.panel::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 55px;
+
+    height: 2px;
+
+    background: #38bdf8;
+
+    box-shadow:
+        0 0 10px #38bdf8;
+}
+
+
+.panel-header {
+
+    min-height: 72px;
+
+    padding: 15px 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-bottom:
+        1px solid
+        rgba(
+            56,
+            189,
+            248,
+            0.14
+        );
+}
+
+
+.panel-tag {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    color: #38bdf8;
+}
+
+
+.panel-header h2 {
+
+    margin: 0;
+
+    font-size: 15px;
+
+    letter-spacing: 1px;
+
+    color: #f1f5f9;
+}
+
+
+.panel-status {
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+
+    color: #67e8f9;
+}
+
+
+/* =========================================================
+   CONTROL GRID
+========================================================= */
+
+.control-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        0.9fr
+        1.5fr
+        0.9fr;
+
+    gap: 15px;
+}
+
+
+/* =========================================================
+   ENVIRONMENT
+========================================================= */
+
+.sensor-list {
+
+    padding:
+        5px 18px 15px;
+}
+
+
+.sensor-row {
+
+    min-height: 70px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    border-bottom:
+        1px solid
+        rgba(
+            148,
+            163,
+            184,
+            0.08
+        );
+}
+
+
+.sensor-row:last-child {
+
+    border-bottom: none;
+}
+
+
+.sensor-name {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+}
+
+
+.sensor-icon {
+
+    width: 32px;
+
+    height: 32px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        rgba(
+            56,
+            189,
+            248,
+            0.07
+        );
+
+    border:
+        1px solid
+        rgba(
+            56,
+            189,
+            248,
+            0.18
+        );
+}
+
+
+.sensor-name strong {
+
+    display: block;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+}
+
+
+.sensor-name small {
+
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 8px;
+
+    color: #64748b;
+}
+
+
+.sensor-value {
+
+    text-align: right;
+}
+
+
+.sensor-value span {
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+    color: #67e8f9;
+
+    text-shadow:
+        0 0 8px
+        rgba(
+            103,
+            232,
+            249,
+            0.3
+        );
+}
+
+
+.sensor-value small {
+
+    color: #64748b;
+
+    font-size: 8px;
+}
+
+
+/* =========================================================
+   MINE MONITOR
+========================================================= */
+
+.mine-display {
+
+    position: relative;
+
+    height: 280px;
+
+    overflow: hidden;
+
+    background: #07111f;
+}
+
+
+.mine-grid {
+
+    position: absolute;
+
+    inset: 0;
+
+    opacity: 0.35;
+
+    background-image:
+
+        linear-gradient(
+            rgba(
+                56,
+                189,
+                248,
+                0.12
+            )
+            1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(
+                56,
+                189,
+                248,
+                0.12
+            )
+            1px,
+            transparent 1px
+        );
+
+    background-size:
+        28px 28px;
+}
+
+
+.tunnel {
+
+    position: absolute;
+
+    height: 2px;
+
+    background: #164e63;
+
+    box-shadow:
+        0 0 8px
+        rgba(
+            34,
+            211,
+            238,
+            0.3
+        );
+}
+
+
+.tunnel-1 {
+
+    width: 75%;
+
+    top: 45%;
+
+    left: 12%;
+
+    transform:
+        rotate(-8deg);
+}
+
+
+.tunnel-2 {
+
+    width: 55%;
+
+    top: 65%;
+
+    left: 30%;
+
+    transform:
+        rotate(10deg);
+}
+
+
+.tunnel-3 {
+
+    width: 40%;
+
+    top: 27%;
+
+    left: 25%;
+
+    transform:
+        rotate(18deg);
+}
+
+
+.robot-marker {
+
+    position: absolute;
+
+    left: 47%;
+
+    top: 45%;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    text-align: center;
+
+    z-index: 5;
+}
+
+
+.robot-body {
+
+    position: relative;
+
+    width: 55px;
+
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 27px;
+
+    border:
+        1px solid #22d3ee;
+
+    background:
+        rgba(
+            8,
+            47,
+            73,
+            0.9
+        );
+
+    box-shadow:
+        0 0 15px
+        rgba(
+            34,
+            211,
+            238,
+            0.35
+        );
+}
+
+
+.robot-marker span {
+
+    display: block;
+
+    margin-top: 6px;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+
+    color: #67e8f9;
+}
+
+
+.robot-pulse {
+
+    position: absolute;
+
+    width: 90px;
+
+    height: 90px;
+
+    left: 50%;
+
+    top: 50%;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    border:
+        1px solid
+        rgba(
+            34,
+            211,
+            238,
+            0.3
+        );
+
+    border-radius: 50%;
+
+    animation:
+        radarPulse
+        2s infinite;
+}
+
+
+@keyframes radarPulse {
+
+    0% {
+        transform:
+            translate(-50%, -50%)
+            scale(0.85);
+
+        opacity: 0.3;
+    }
+
+    50% {
+        transform:
+            translate(-50%, -50%)
+            scale(1.05);
+
+        opacity: 0.7;
+    }
+
+    100% {
+        transform:
+            translate(-50%, -50%)
+            scale(0.85);
+
+        opacity: 0.3;
+    }
+}
+
+
+.mine-point {
+
+    position: absolute;
+
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #38bdf8;
+
+    box-shadow:
+        0 0 10px #38bdf8;
+}
+
+
+.point-1 {
+
+    top: 25%;
+
+    left: 20%;
+}
+
+
+.point-2 {
+
+    top: 67%;
+
+    left: 78%;
+}
+
+
+.point-3 {
+
+    top: 31%;
+
+    right: 17%;
+}
+
+
+.map-label {
+
+    position: absolute;
+
+    font-size: 8px;
+
+    color: #475569;
+
+    letter-spacing: 1px;
+}
+
+
+.label-a {
+
+    left: 12%;
+
+    bottom: 15%;
+}
+
+
+.label-b {
+
+    right: 12%;
+
+    top: 15%;
+}
+
+
+.coordinate-bar {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    padding:
+        9px 14px;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+
+    color: #64748b;
+
+    background:
+        rgba(
+            2,
+            8,
+            23,
+            0.7
+        );
+}
+
+
+/* =========================================================
+   RISK DISPLAY
+========================================================= */
+
+.risk-display {
+
+    min-height: 280px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.risk-ring {
+
+    width: 155px;
+
+    height: 155px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+}
+
+
+.risk-ring-inner {
+
+    width: 130px;
+
+    height: 130px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #091525;
+}
+
+
+.risk-ring-inner span {
+
+    font-size: 35px;
+
+    font-weight: 700;
+}
+
+
+.risk-ring-inner small {
+
+    font-size: 7px;
+
+    letter-spacing: 1.5px;
+
+    color: #64748b;
+}
+
+
+.risk-level-label {
+
+    margin-top: 18px;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    color: #64748b;
+}
+
+
+.risk-level {
+
+    margin-top: 7px;
+
+    font-size: 23px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+
+.risk-footer {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    padding:
+        10px 15px;
+
+    font-size: 8px;
+
+    color: #64748b;
+
+    border-top:
+        1px solid
+        rgba(
+            56,
+            189,
+            248,
+            0.12
+        );
+}
+
+
+/* =========================================================
+   SAFE
+========================================================= */
+
+.risk-display.safe .risk-ring {
+
+    background:
+
+        conic-gradient(
+            #22c55e 0deg,
+            #22c55e 40deg,
+            #164e63 40deg,
+            #164e63 360deg
+        );
+
+    box-shadow:
+        0 0 30px
+        rgba(
+            34,
+            197,
+            94,
+            0.18
+        );
+}
+
+
+.risk-display.safe
+.risk-ring-inner span {
+
+    color: #86efac;
+}
+
+
+.risk-display.safe
+.risk-level {
+
+    color: #86efac;
+
+    text-shadow:
+        0 0 15px
+        rgba(
+            134,
+            239,
+            172,
+            0.5
+        );
+}
+
+
+/* =========================================================
+   WARNING
+========================================================= */
+
+.risk-display.warning .risk-ring {
+
+    background:
+
+        conic-gradient(
+            #eab308 0deg,
+            #eab308 180deg,
+            #713f12 180deg,
+            #713f12 360deg
+        );
+
+    box-shadow:
+        0 0 35px
+        rgba(
+            234,
+            179,
+            8,
+            0.3
+        );
+}
+
+
+.risk-display.warning
+.risk-ring-inner span {
+
+    color: #fde047;
+}
+
+
+.risk-display.warning
+.risk-level {
+
+    color: #fde047;
+
+    text-shadow:
+        0 0 15px
+        rgba(
+            253,
+            224,
+            71,
+            0.5
+        );
+}
+
+
+/* =========================================================
+   DANGER
+========================================================= */
+
+.risk-display.danger .risk-ring {
+
+    background:
+
+        conic-gradient(
+            #ef4444 0deg,
+            #ef4444 290deg,
+            #7f1d1d 290deg,
+            #7f1d1d 360deg
+        );
+
+    box-shadow:
+        0 0 40px
+        rgba(
+            239,
+            68,
+            68,
+            0.35
+        );
+
+    animation:
+        dangerPulse
+        1.2s infinite;
+}
+
+
+.risk-display.danger
+.risk-ring-inner span {
+
+    color: #f87171;
+}
+
+
+.risk-display.danger
+.risk-level {
+
+    color: #f87171;
+
+    text-shadow:
+        0 0 18px
+        rgba(
+            248,
+            113,
+            113,
+            0.6
+        );
+}
+
+
+@keyframes dangerPulse {
+
+    0% {
+
+        box-shadow:
+            0 0 20px
+            rgba(
+                239,
+                68,
+                68,
+                0.2
+            );
+    }
+
+    50% {
+
+        box-shadow:
+            0 0 45px
+            rgba(
+                239,
+                68,
+                68,
+                0.55
+            );
+    }
+
+    100% {
+
+        box-shadow:
+            0 0 20px
+            rgba(
+                239,
+                68,
+                68,
+                0.2
+            );
+    }
+}
+
+
+/* =========================================================
+   SECONDARY GRID
+========================================================= */
+
+.secondary-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 15px;
+
+    margin-top: 15px;
+}
+
+
+/* =========================================================
+   AI VISION
+========================================================= */
+
+.vision-content {
+
+    min-height: 160px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 20px;
+
+    gap: 45px;
+}
+
+
+.worker-counter {
+
+    min-width: 140px;
+
+    text-align: center;
+}
+
+
+.worker-number {
+
+    display: block;
+
+    font-size: 55px;
+
+    font-weight: 700;
+
+    color: #67e8f9;
+
+    text-shadow:
+        0 0 15px
+        rgba(
+            103,
+            232,
+            249,
+            0.25
+        );
+}
+
+
+.worker-label {
+
+    display: block;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    color: #64748b;
+}
+
+
+.vision-info {
+
+    flex: 1;
+}
+
+
+.vision-info div {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    padding:
+        10px 0;
+
+    border-bottom:
+        1px solid
+        rgba(
+            148,
+            163,
+            184,
+            0.08
+        );
+}
+
+
+.vision-info span {
+
+    font-size: 8px;
+
+    color: #64748b;
+
+    letter-spacing: 1px;
+}
+
+
+.vision-info strong {
+
+    font-size: 9px;
+
+    color: #cbd5e1;
+}
+
+
+.green {
+
+    color: #86efac !important;
+}
+
+
+/* =========================================================
+   ESP32-CAM LIVE VISION
+========================================================= */
+
+.live-camera {
+
+    width: 100%;
+
+    padding:
+        0 18px 18px;
+
+}
+
+
+.camera-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding:
+        10px 12px;
+
+    background:
+        rgba(
+            2,
+            8,
+            23,
+            0.75
+        );
+
+    border:
+        1px solid
+        rgba(
+            56,
+            189,
+            248,
+            0.16
+        );
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+
+    color: #64748b;
+}
+
+
+.camera-status {
+
+    color: #86efac;
+
+    animation:
+        liveBlink
+        1.5s infinite;
+}
+
+
+@keyframes liveBlink {
+
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.35;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.camera-frame {
+
+    position: relative;
+
+    width: 100%;
+
+    background: #020617;
+
+    border-left:
+        1px solid
+        rgba(
+            56,
+            189,
+            248,
+            0.16
+        );
+
+    border-right:
+        1px solid
+        rgba(
+            56,
+            189,
+            248,
+            0.16
+        );
+
+    overflow: hidden;
+}
+
+
+.camera-frame::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 2;
+
+    box-shadow:
+        inset 0 0 40px
+        rgba(
+            0,
+            0,
+            0,
+            0.55
+        );
+}
+
+
+.camera-frame img {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    min-height: 180px;
+
+    object-fit: contain;
+
+    background: #020617;
+}
+
+
+.camera-footer {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    padding:
+        9px 12px;
+
+    background:
+        rgba(
+            2,
+            8,
+            23,
+            0.75
+        );
+
+    border:
+        1px solid
+        rgba(
+            56,
+            189,
+            248,
+            0.16
+        );
+
+    font-size: 7px;
+
+    letter-spacing: 1px;
+
+    color: #64748b;
+}
+
+
+/* =========================================================
+   CAMERA CONNECTION INDICATOR
+========================================================= */
+
+.camera-frame img[src=""] {
+
+    display: none;
+}
+
+
+/* =========================================================
+   TELEMETRY
+========================================================= */
+
+.telemetry-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    padding: 20px;
+}
+
+
+.telemetry-grid div {
+
+    padding: 16px;
+
+    border-right:
+        1px solid
+        rgba(
+            148,
+            163,
+            184,
+            0.08
+        );
+
+    border-bottom:
+        1px solid
+        rgba(
+            148,
+            163,
+            184,
+            0.08
+        );
+}
+
+
+.telemetry-grid span {
+
+    display: block;
+
+    font-size: 8px;
+
+    color: #64748b;
+
+    letter-spacing: 1px;
+}
+
+
+.telemetry-grid strong {
+
+    display: block;
+
+    margin-top: 7px;
+
+    font-size: 11px;
+
+    color: #cbd5e1;
+}
+
+
+/* =========================================================
+   EVENT LOG
+========================================================= */
+
+.event-panel {
+
+    margin-top: 15px;
+}
+
+
+.event-log {
+
+    min-height: 65px;
+
+    max-height: 240px;
+
+    overflow-y: auto;
+}
+
+
+.event-item {
+
+    display: grid;
+
+    grid-template-columns:
+        78px
+        78px
+        60px
+        1fr;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding:
+        12px 18px;
+
+    border-bottom:
+        1px solid
+        rgba(
+            148,
+            163,
+            184,
+            0.07
+        );
+
+    font-size: 10px;
+
+    color: #cbd5e1;
+
+    transition:
+        background
+        0.2s ease,
+
+        border-color
+        0.2s ease;
+}
+
+
+.event-item:hover {
+
+    background:
+        rgba(
+            56,
+            189,
+            248,
+            0.04
+        );
+}
+
+
+.event-time {
+
+    min-width: 0;
+
+    color: #38bdf8;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+
+    font-family:
+        "Consolas",
+        "Courier New",
+        monospace;
+}
+
+
+.event-level {
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+}
+
+
+.event-score {
+
+    font-size: 9px;
+
+    color: #94a3b8;
+
+    font-family:
+        "Consolas",
+        "Courier New",
+        monospace;
+}
+
+
+.event-message {
+
+    min-width: 0;
+
+    line-height: 1.5;
+}
+
+
+.event-safe {
+
+    border-left:
+        3px solid #22c55e;
+}
+
+
+.event-safe .event-level {
+
+    color: #86efac;
+}
+
+
+.event-warning {
+
+    border-left:
+        3px solid #eab308;
+}
+
+
+.event-warning .event-level {
+
+    color: #fde047;
+}
+
+
+.event-danger {
+
+    border-left:
+        3px solid #ef4444;
+
+    background:
+        rgba(
+            127,
+            29,
+            29,
+            0.08
+        );
+}
+
+
+.event-danger .event-level {
+
+    color: #f87171;
+
+    text-shadow:
+        0 0 8px
+        rgba(
+            248,
+            113,
+            113,
+            0.4
+        );
+}
+
+
+.event-neutral {
+
+    border-left:
+        3px solid #38bdf8;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+
+    width: 5px;
+}
+
+
+::-webkit-scrollbar-track {
+
+    background:
+        #07111f;
+}
+
+
+::-webkit-scrollbar-thumb {
+
+    background:
+        #164e63;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .control-grid {
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+    .mine-panel {
+
+        grid-column:
+            span 2;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .topbar {
+
+        padding: 15px;
+
+        align-items:
+            flex-start;
+
+        gap: 15px;
+
+        flex-direction:
+            column;
+    }
+
+
+    .system-status {
+
+        text-align:
+            left;
+    }
+
+
+    main {
+
+        width: 94%;
+    }
+
+
+    .control-grid,
+    .secondary-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .mine-panel {
+
+        grid-column:
+            span 1;
+    }
+
+
+    .vision-content {
+
+        flex-direction:
+            column;
+
+        gap: 20px;
+    }
+
+
+    .live-camera {
+
+        padding:
+            0 12px 12px;
+    }
+
+
+    .camera-footer {
+
+        flex-direction:
+            column;
+
+        gap: 5px;
+    }
+
+
+    .event-item {
+
+        grid-template-columns:
+            65px
+            65px
+            50px
+            1fr;
+
+        gap: 8px;
+
+        padding:
+            11px 12px;
+    }
+}

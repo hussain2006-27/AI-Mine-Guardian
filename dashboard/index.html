@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        AI Mine Guardian | Control Center
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<header class="topbar">
+
+    <div class="brand">
+
+        <div class="brand-icon">
+            ⛏
+        </div>
+
+        <div>
+
+            <h1>
+                AI MINE GUARDIAN
+            </h1>
+
+            <p>
+                AUTONOMOUS UNDERGROUND SAFETY SYSTEM
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="system-status">
+
+        <span class="online-dot"></span>
+
+        <div>
+
+            <strong>
+                SYSTEM OPERATIONAL
+            </strong>
+
+            <small>
+                FIREBASE TELEMETRY LINK
+            </small>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<main>
+
+
+<section class="control-grid">
+
+
+    <!-- ENVIRONMENT -->
+
+    <div class="panel environment-panel">
+
+        <div class="panel-header">
+
+            <div>
+
+                <span class="panel-tag">
+                    SENSOR ARRAY
+                </span>
+
+                <h2>
+                    🌫 ENVIRONMENT
+                </h2>
+
+            </div>
+
+            <span class="panel-status">
+                ● LIVE
+            </span>
+
+        </div>
+
+
+        <div class="sensor-list">
+
+
+            <div class="sensor-row">
+
+                <div class="sensor-name">
+
+                    <span class="sensor-icon">
+                        🌡
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            TEMPERATURE
+                        </strong>
+
+                        <small>
+                            Ambient
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="sensor-value">
+
+                    <span id="temperature">
+                        --
+                    </span>
+
+                    <small>
+                        °C
+                    </small>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="sensor-row">
+
+                <div class="sensor-name">
+
+                    <span class="sensor-icon">
+                        🔥
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            METHANE
+                        </strong>
+
+                        <small>
+                            MQ-4
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="sensor-value">
+
+                    <span id="mq4">
+                        --
+                    </span>
+
+                    <small>
+                        PPM
+                    </small>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="sensor-row">
+
+                <div class="sensor-name">
+
+                    <span class="sensor-icon">
+                        ☁
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            CARBON MONOXIDE
+                        </strong>
+
+                        <small>
+                            MQ-9
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="sensor-value">
+
+                    <span id="mq9">
+                        --
+                    </span>
+
+                    <small>
+                        PPM
+                    </small>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="sensor-row">
+
+                <div class="sensor-name">
+
+                    <span class="sensor-icon">
+                        💧
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            HUMIDITY
+                        </strong>
+
+                        <small>
+                            Environmental
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="sensor-value">
+
+                    <span id="humidity">
+                        --
+                    </span>
+
+                    <small>
+                        %
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- MINE MONITOR -->
+
+    <div class="panel mine-panel">
+
+        <div class="panel-header">
+
+            <div>
+
+                <span class="panel-tag">
+                    AUTONOMOUS UNIT
+                </span>
+
+                <h2>
+                    🗺 MINE MONITOR
+                </h2>
+
+            </div>
+
+            <span class="panel-status">
+                ● TRACKING
+            </span>
+
+        </div>
+
+
+        <div class="mine-display">
+
+            <div class="mine-grid"></div>
+
+            <div class="tunnel tunnel-1"></div>
+
+            <div class="tunnel tunnel-2"></div>
+
+            <div class="tunnel tunnel-3"></div>
+
+
+            <div class="robot-marker">
+
+                <div class="robot-pulse"></div>
+
+                <div class="robot-body">
+                    🤖
+                </div>
+
+                <span>
+                    MINE SCOUT
+                </span>
+
+            </div>
+
+
+            <div class="mine-point point-1"></div>
+
+            <div class="mine-point point-2"></div>
+
+            <div class="mine-point point-3"></div>
+
+
+            <div class="map-label label-a">
+                SECTOR A
+            </div>
+
+            <div class="map-label label-b">
+                SECTOR B
+            </div>
+
+        </div>
+
+
+        <div class="coordinate-bar">
+
+            <span>
+                SECTOR: A-01
+            </span>
+
+            <span>
+                MODE: AUTONOMOUS
+            </span>
+
+            <span>
+                STATUS: ACTIVE
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- AI RISK -->
+
+    <div class="panel risk-panel">
+
+        <div class="panel-header">
+
+            <div>
+
+                <span class="panel-tag">
+                    ARTIFICIAL INTELLIGENCE
+                </span>
+
+                <h2>
+                    🧠 AI RISK
+                </h2>
+
+            </div>
+
+            <span class="panel-status">
+                ● ANALYZING
+            </span>
+
+        </div>
+
+
+        <div
+            class="risk-display safe"
+            id="riskDisplay"
+        >
+
+            <div
+                class="risk-ring"
+                id="riskRing"
+            >
+
+                <div class="risk-ring-inner">
+
+                    <span id="riskScore">
+                        --
+                    </span>
+
+                    <small>
+                        RISK SCORE
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="risk-level-label">
+                CURRENT THREAT LEVEL
+            </div>
+
+
+            <div
+                id="riskLevel"
+                class="risk-level"
+            >
+                --
+            </div>
+
+        </div>
+
+
+        <div class="risk-footer">
+
+            <span>
+                AI DECISION ENGINE
+            </span>
+
+            <span id="riskStatus">
+                MONITORING
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     AI VISION
+========================================================= -->
+
+<section class="secondary-grid">
+
+
+    <div class="panel vision-panel">
+
+        <div class="panel-header">
+
+            <div>
+
+                <span class="panel-tag">
+                    COMPUTER VISION
+                </span>
+
+                <h2>
+                    👁 AI VISION
+                </h2>
+
+            </div>
+
+            <span
+                class="panel-status"
+                id="cameraStatus"
+            >
+                ● ONLINE
+            </span>
+
+        </div>
+
+
+        <!-- LIVE ESP32 CAMERA -->
+
+        <div class="camera-container">
+
+            <div class="camera-header">
+
+                <span>
+                    ESP32-CAM LIVE FEED
+                </span>
+
+                <span class="camera-live">
+                    ● LIVE
+                </span>
+
+            </div>
+
+
+            <div class="camera-frame">
+
+                <img
+                    id="esp32Stream"
+                    src="http://10.1.57.201/stream"
+                    alt="ESP32-CAM Live Stream"
+                >
+
+                <div class="camera-overlay">
+
+                    <span>
+                        AI MINE GUARDIAN
+                    </span>
+
+                    <span>
+                        YOLO VISION
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- VISION INFORMATION -->
+
+        <div class="vision-content">
+
+            <div class="worker-counter">
+
+                <span
+                    class="worker-number"
+                    id="workers"
+                >
+                    --
+                </span>
+
+                <span class="worker-label">
+                    WORKERS DETECTED
+                </span>
+
+            </div>
+
+
+            <div class="vision-info">
+
+                <div>
+
+                    <span>
+                        CAMERA
+                    </span>
+
+                    <strong
+                        class="green"
+                        id="cameraConnection"
+                    >
+                        ● ACTIVE
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        AI MODEL
+                    </span>
+
+                    <strong>
+                        YOLO11
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        ANALYSIS
+                    </span>
+
+                    <strong>
+                        REAL-TIME
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- TELEMETRY -->
+
+    <div class="panel telemetry-panel">
+
+        <div class="panel-header">
+
+            <div>
+
+                <span class="panel-tag">
+                    ROBOT STATUS
+                </span>
+
+                <h2>
+                    📡 TELEMETRY
+                </h2>
+
+            </div>
+
+            <span class="panel-status">
+                ● CONNECTED
+            </span>
+
+        </div>
+
+
+        <div class="telemetry-grid">
+
+            <div>
+
+                <span>
+                    CONNECTION
+                </span>
+
+                <strong class="green">
+                    ONLINE
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    DATA LINK
+                </span>
+
+                <strong class="green">
+                    STABLE
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    ROBOT
+                </span>
+
+                <strong>
+                    MINE-01
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    OPERATION MODE
+                </span>
+
+                <strong>
+                    AUTONOMOUS
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- EVENT STREAM -->
+
+<section class="panel event-panel">
+
+    <div class="panel-header">
+
+        <div>
+
+            <span class="panel-tag">
+                RISK HISTORY
+            </span>
+
+            <h2>
+                🚨 LIVE EVENT STREAM
+            </h2>
+
+        </div>
+
+        <span class="panel-status">
+            ● LIVE
+        </span>
+
+    </div>
+
+
+    <div
+        id="riskReasons"
+        class="event-log"
+    >
+
+        <div class="event-item">
+
+            <span class="event-time">
+                SYSTEM
+            </span>
+
+            <span class="event-level">
+                WAITING
+            </span>
+
+            <span class="event-score">
+                --
+            </span>
+
+            <span class="event-message">
+                Waiting for risk history...
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<script type="module">
+
+
+/* =========================================================
+   FIREBASE
+========================================================= */
+
+import {
+    initializeApp
+}
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
+
+import {
+
+    getDatabase,
+
+    ref,
+
+    onValue,
+
+    query,
+
+    limitToLast,
+
+    orderByKey
+
+}
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-database.js";
+
+
+const firebaseConfig = {
+
+    apiKey:
+        "AIzaSyAAYsop4YtZpy8K7Uov19Vp6DbA9IMdlBk",
+
+    authDomain:
+        "ai-mine-guardian.firebaseapp.com",
+
+    databaseURL:
+        "https://ai-mine-guardian-default-rtdb.firebaseio.com",
+
+    projectId:
+        "ai-mine-guardian",
+
+    storageBucket:
+        "ai-mine-guardian.firebasestorage.app",
+
+    messagingSenderId:
+        "638303999192",
+
+    appId:
+        "1:638303999192:web:f9b0acdf2b41d4b23473ad"
+
+};
+
+
+const app =
+    initializeApp(firebaseConfig);
+
+
+const database =
+    getDatabase(app);
+
+
+console.log(
+    "🔥 Firebase Dashboard Connected"
+);
+
+
+
+/* =========================================================
+   ESP32-CAM CONNECTION
+========================================================= */
+
+const esp32Stream =
+    document.getElementById(
+        "esp32Stream"
+    );
+
+
+const cameraStatus =
+    document.getElementById(
+        "cameraStatus"
+    );
+
+
+const cameraConnection =
+    document.getElementById(
+        "cameraConnection"
+    );
+
+
+esp32Stream.addEventListener(
+    "load",
+    () => {
+
+        cameraStatus.textContent =
+            "● ONLINE";
+
+        cameraConnection.textContent =
+            "● ACTIVE";
+
+        cameraConnection.className =
+            "green";
+
+        console.log(
+            "📷 ESP32-CAM stream connected"
+        );
+
+    }
+);
+
+
+esp32Stream.addEventListener(
+    "error",
+    () => {
+
+        cameraStatus.textContent =
+            "● OFFLINE";
+
+        cameraConnection.textContent =
+            "● CAMERA ERROR";
+
+        cameraConnection.className =
+            "camera-error";
+
+        console.log(
+            "❌ ESP32-CAM stream unavailable"
+        );
+
+    }
+);
+
+
+
+/* =========================================================
+   SENSOR DATA
+========================================================= */
+
+const sensorsRef =
+    ref(
+        database,
+        "sensors"
+    );
+
+
+onValue(
+
+    sensorsRef,
+
+    (snapshot) => {
+
+        const data =
+            snapshot.val();
+
+
+        if (!data) {
+            return;
+        }
+
+
+        const temperature =
+            data.environment?.temperature
+            ?? "--";
+
+
+        const humidity =
+            data.environment?.humidity
+            ?? "--";
+
+
+        const mq4 =
+            data.gases?.mq4_methane
+            ?? "--";
+
+
+        const mq9 =
+            data.gases?.mq9_carbon_monoxide
+            ?? "--";
+
+
+        document.getElementById(
+            "temperature"
+        ).textContent =
+            temperature;
+
+
+        document.getElementById(
+            "humidity"
+        ).textContent =
+            humidity;
+
+
+        document.getElementById(
+            "mq4"
+        ).textContent =
+            mq4;
+
+
+        document.getElementById(
+            "mq9"
+        ).textContent =
+            mq9;
+
+
+        console.log(
+            "🌫 Sensor data:",
+            data
+        );
+
+    }
+
+);
+
+
+
+/* =========================================================
+   AI VISION DATA
+========================================================= */
+
+const visionRef =
+    ref(
+        database,
+        "vision"
+    );
+
+
+onValue(
+
+    visionRef,
+
+    (snapshot) => {
+
+        const data =
+            snapshot.val();
+
+
+        if (!data) {
+            return;
+        }
+
+
+        const workers =
+            data.workers_detected
+            ?? 0;
+
+
+        document.getElementById(
+            "workers"
+        ).textContent =
+            workers;
+
+
+        console.log(
+            "👁 Vision data:",
+            data
+        );
+
+    }
+
+);
+
+
+
+/* =========================================================
+   COMBINED RISK
+========================================================= */
+
+const riskRef =
+    ref(
+        database,
+        "combined_risk"
+    );
+
+
+onValue(
+
+    riskRef,
+
+    (snapshot) => {
+
+        const data =
+            snapshot.val();
+
+
+        if (!data) {
+            return;
+        }
+
+
+        const level =
+            String(
+                data.level ?? "--"
+            ).toUpperCase();
+
+
+        const score =
+            data.score ?? 0;
+
+
+        const riskDisplay =
+            document.getElementById(
+                "riskDisplay"
+            );
+
+
+        const riskLevelElement =
+            document.getElementById(
+                "riskLevel"
+            );
+
+
+        const riskScoreElement =
+            document.getElementById(
+                "riskScore"
+            );
+
+
+        const riskStatusElement =
+            document.getElementById(
+                "riskStatus"
+            );
+
+
+        riskLevelElement.textContent =
+            level;
+
+
+        riskScoreElement.textContent =
+            score;
+
+
+        riskDisplay.classList.remove(
+            "safe",
+            "warning",
+            "danger"
+        );
+
+
+        if (level === "SAFE") {
+
+            riskDisplay.classList.add(
+                "safe"
+            );
+
+            riskStatusElement.textContent =
+                "NO ACTIVE THREAT";
+
+        }
+
+
+        else if (level === "WARNING") {
+
+            riskDisplay.classList.add(
+                "warning"
+            );
+
+            riskStatusElement.textContent =
+                "CAUTION REQUIRED";
+
+        }
+
+
+        else if (
+            level === "DANGER"
+            ||
+            level === "CRITICAL"
+        ) {
+
+            riskDisplay.classList.add(
+                "danger"
+            );
+
+            riskStatusElement.textContent =
+                "IMMEDIATE ATTENTION";
+
+        }
+
+
+        else {
+
+            riskDisplay.classList.add(
+                "safe"
+            );
+
+            riskStatusElement.textContent =
+                "MONITORING";
+
+        }
+
+
+        console.log(
+            "🚨 Risk:",
+            data
+        );
+
+    }
+
+);
+
+
+
+/* =========================================================
+   RISK HISTORY
+========================================================= */
+
+const riskHistoryRef =
+    query(
+
+        ref(
+            database,
+            "risk_history"
+        ),
+
+        orderByKey(),
+
+        limitToLast(12)
+
+    );
+
+
+const eventLog =
+    document.getElementById(
+        "riskReasons"
+    );
+
+
+
+function escapeHtml(value) {
+
+    return String(
+        value ?? ""
+    )
+
+    .replace(
+        /&/g,
+        "&amp;"
+    )
+
+    .replace(
+        /</g,
+        "&lt;"
+    )
+
+    .replace(
+        />/g,
+        "&gt;"
+    )
+
+    .replace(
+        /"/g,
+        "&quot;"
+    )
+
+    .replace(
+        /'/g,
+        "&#039;"
+    );
+
+}
+
+
+
+function formatEventTime(timestamp) {
+
+    if (!timestamp) {
+        return "--";
+    }
+
+
+    const date =
+        new Date(
+            Number(timestamp) * 1000
+        );
+
+
+    if (
+        Number.isNaN(
+            date.getTime()
+        )
+    ) {
+        return "--";
+    }
+
+
+    return date.toLocaleTimeString(
+        [],
+        {
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit"
+        }
+    );
+
+}
+
+
+
+onValue(
+
+    riskHistoryRef,
+
+    (snapshot) => {
+
+        const history =
+            snapshot.val();
+
+
+        if (!history) {
+
+            eventLog.innerHTML = `
+
+                <div class="event-item">
+
+                    <span class="event-time">
+                        SYSTEM
+                    </span>
+
+                    <span class="event-level">
+                        WAITING
+                    </span>
+
+                    <span class="event-score">
+                        --
+                    </span>
+
+                    <span class="event-message">
+                        Waiting for risk history...
+                    </span>
+
+                </div>
+
+            `;
+
+            return;
+        }
+
+
+        const events =
+            Object.values(history)
+            .sort(
+                (a, b) =>
+                    Number(
+                        b.timestamp ?? 0
+                    )
+                    -
+                    Number(
+                        a.timestamp ?? 0
+                    )
+            );
+
+
+        eventLog.innerHTML = "";
+
+
+        events.forEach(
+
+            (riskEvent) => {
+
+                const level =
+                    String(
+                        riskEvent.level
+                        ??
+                        "UNKNOWN"
+                    ).toUpperCase();
+
+
+                let eventClass =
+                    "event-neutral";
+
+
+                if (
+                    level === "SAFE"
+                ) {
+
+                    eventClass =
+                        "event-safe";
+
+                }
+
+
+                else if (
+                    level === "WARNING"
+                ) {
+
+                    eventClass =
+                        "event-warning";
+
+                }
+
+
+                else if (
+                    level === "DANGER"
+                    ||
+                    level === "CRITICAL"
+                ) {
+
+                    eventClass =
+                        "event-danger";
+
+                }
+
+
+                const reasons =
+                    Array.isArray(
+                        riskEvent.reasons
+                    )
+
+                    ?
+
+                    riskEvent.reasons
+
+                    :
+
+                    (
+                        riskEvent.reasons
+                        &&
+                        typeof riskEvent.reasons
+                        ===
+                        "object"
+                    )
+
+                    ?
+
+                    Object.values(
+                        riskEvent.reasons
+                    )
+
+                    :
+
+                    [];
+
+
+                const reasonText =
+                    reasons.length > 0
+
+                    ?
+
+                    reasons.join(
+                        " • "
+                    )
+
+                    :
+
+                    "No active risk conditions";
+
+
+                const event =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                event.className =
+                    `event-item ${eventClass}`;
+
+
+                event.innerHTML = `
+
+                    <span class="event-time">
+
+                        ${escapeHtml(
+                            formatEventTime(
+                                riskEvent.timestamp
+                            )
+                        )}
+
+                    </span>
+
+
+                    <span class="event-level">
+
+                        ${escapeHtml(
+                            level
+                        )}
+
+                    </span>
+
+
+                    <span class="event-score">
+
+                        ${escapeHtml(
+                            riskEvent.score ?? 0
+                        )}
+
+                    </span>
+
+
+                    <span class="event-message">
+
+                        ${escapeHtml(
+                            reasonText
+                        )}
+
+                    </span>
+
+                `;
+
+
+                eventLog.appendChild(
+                    event
+                );
+
+            }
+
+        );
+
+    }
+
+);
+
+</script>
+
+
+</body>
+
+</html>
